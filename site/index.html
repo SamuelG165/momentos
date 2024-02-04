@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./estilo.css">
+    <title>Nuestra historia</title>
+</head>
+
+<body>
+    <!-- SECCION I N I C I O -->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido-header">
+                    <h1>Mady 💘</h1>
+                    <nav id="nav" class="">
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">NOSOTROS</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">NUESTRA HISTORIA</a></li>
+                            <li><a href="#" onclick="seleccionar(this)">NUESTRAS FOTOS</a></li>
+                           
+                        </ul>
+                    </nav>
+
+                    <!-- Icono del menu responsive -->
+                    <div id="icono-nav" onclick="responsiveMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenida baby a este pequeño regalo digital 👉🏻👈🏻</p>
+                <h2><span></span>💕 Aitana y Samuel 💕 
+                    </h2>
+                <p class="descripcion">Hice esta pagina para que pongamos nuestra historia y nuestro amor 03|04|23 👩🏼‍❤️‍👨🏽</p>
+                <a href="#">Tiempo para nustro primer añito juntos: 2 meses</a>
+
+                <style>
+
+.loader {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 25px 25px 75px rgba(0,0,0,0.55);
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  background: transparent;
+  border: 1px dashed#444;
+  border-radius: 50%;
+  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+  inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+
+.loader::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px dashed#444;
+  box-shadow: inset -5px -5px 25px rgba(0,0,0,0.25),
+  inset 5px 5px 35px rgba(0,0,0,0.25);
+}
+
+.loader span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  transform-origin: top left;
+  animation: radar81 2s linear infinite;
+  border-top: 1px dashed #fff;
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: seagreen;
+  transform-origin: top left;
+  transform: rotate(-55deg);
+  filter: blur(30px) drop-shadow(20px 20px 20px seagreen);
+}
+
+@keyframes radar81 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+                </style>
+                <div class="loader">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION S O B R E M I -->
+    <section id="sobremi">
+        <div class="contenedor-foto">
+            <img src="great.jpeg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo-seccion">Nuestra Relacion</p>
+            <h2>Hola mi niña hermosa, <span> Primero que nada, te quiero decir 
+                Que te amo demasiado mi niña 🥺❤
+            </span> </h2>
+            
+            <p>Mi princesa, espero te guste mi idea, quise crear una pagina donde podamos tener nuestra historia y como nos conocimos.
+                Mi amor por ti no tiene limites, nunca habia querido a una persona como a ti, eres mi todo mi niña 💌
+            </p>
+            <p>Cuando te sientas mal podrás venir acá y aver nuestras cositas, todo lo bueno que hemos pasado y que a pesar de todo, nunca nos dimos por vencidos mi princesa hermosa. Recuerda que siempre serás mi niña 🥺
+            </p>
+        </div>
+    </section>
+<!--cuenta para nuestro aniversxario de 1 año-->
+
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .audio-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #15b5dd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 20px;
+      outline: none;
+    }
+
+    .play-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #131516;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .play-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .audio-container {
+      text-align: center;
+    }
+  
+    .play-btn {
+      margin-top: 10px; /* Puedes ajustar esto según sea necesario */
+    }
+
+    <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    background-color: #070707;
+                }
+        
+                nav {
+                    background-color: #333;
+                    padding: 10px;
+                    text-align: center;
+                }
+        
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                li {
+                    display: inline;
+                    margin: 0 10px;
+                }
+        
+                a {
+                    text-decoration: none;
+                    color: #070707;
+                    font-size: 18px;
+                    font-weight: bold;
+                    transition: color 0.3s;
+                }
+        
+                a:hover {
+                    color: #bafc05; /* Cambiar a color deseado al pasar el ratón */
+                }
+
+                button,button::after {
+  padding: 10px 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  position: relative;
+}
+
+
+
+button::after {
+  --move1: inset(50% 50% 50% 50%);
+  --move2: inset(31% 0 40% 0);
+  --move3: inset(39% 0 15% 0);
+  --move4: inset(45% 0 40% 0);
+  --move5: inset(45% 0 6% 0);
+  --move6: inset(14% 0 61% 0);
+  clip-path: var(--move1);
+  content: 'Te Amo 💘';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+}
+
+button:hover::after {
+  animation: glitch_4011 1s;
+  text-shadow: 10 10px 10px black;
+  animation-timing-function: steps(2, end);
+  text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8;
+  background-color: transparent;
+  border: 3px solid rgb(0, 255, 213);
+}
+
+button:hover {
+  text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8;
+}
+
+button:hover {
+  background-color: transparent;
+  border: 1px solid rgb(0, 255, 213);
+  box-shadow: 0px 10px 10px -10px rgb(0, 255, 213);
+}
+
+@keyframes glitch_4011 {
+  0% {
+    clip-path: var(--move1);
+    transform: translate(0px,-10px);
+  }
+
+  10% {
+    clip-path: var(--move2);
+    transform: translate(-10px,10px);
+  }
+
+  20% {
+    clip-path: var(--move3);
+    transform: translate(10px,0px);
+  }
+
+  30% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  40% {
+    clip-path: var(--move5);
+    transform: translate(10px,-10px);
+  }
+
+  50% {
+    clip-path: var(--move6);
+    transform: translate(-10px,10px);
+  }
+
+  60% {
+    clip-path: var(--move1);
+    transform: translate(10px,-10px);
+  }
+
+  70% {
+    clip-path: var(--move3);
+    transform: translate(-10px,10px);
+  }
+
+  80% {
+    clip-path: var(--move2);
+    transform: translate(10px,-10px);
+  }
+
+  90% {
+    clip-path: var(--move4);
+    transform: translate(-10px,10px);
+  }
+
+  100% {
+    clip-path: var(--move1);
+    transform: translate(0);
+  }
+}
+  </style>
+
+<style>
+   
+  </style>
+
+</head>
+<body>
+
+    <div class="audio-container">
+        <h2>Falling - Lil Mosey</h2>
+        <audio controls>
+          <source src="Falling.mp3" type="audio/mp3">
+          Tu navegador no soporta la etiqueta de audio.
+        </audio>
+        
+        <button class="play-btn" onclick="togglePlay()">· R E P R O D U C I R ·</button>
+      </div>
+      
+      <script>
+        function togglePlay() {
+          var audio = document.querySelector('audio');
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        }
+      </script>
+
+   
+
+    <!-- SECCION PORTAFOLIO -->
+    <section id="portfolio">
+        <h3 class="titulo-seccion">Nuestros Momentos</h3>
+        <pr>
+
+        </pr>
+        <pr>
+            Y los que faltan...
+        </pr>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="first.jpg" alt="">
+                <div class="info">
+                    <h4>Nuestro primera foto juntos</h4>
+                    
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="inter.jpg" alt="">
+                <div class="info">
+                    <h4>Nuestro primer Inter Juntos 💘</h4>
+                    
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="grumman.jpg" alt="">
+                <div class="info">
+                    <h4>Nosotros en un avión 🙈</h4>
+                   </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="Moly.jpg" alt="">
+                <div class="info">
+                    <h4>Moly, nuestro primer peluche:)</h4>
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="aula.jpg" alt="">
+                <div class="info">
+                    <h4>Proyecto aula juntos 👻💗</h4>
+                    
+                </div>
+            </div>
+            <div class="proyecto">
+                <div class="overlay"></div>
+                <img src="mundo.jpg" alt="">
+                <div class="info">
+                    <h4>Nuestras siluetas juntos en Mundo E 🥰</h4>
+  
+    
+                </div>
+            </div>
+        </div>
+        <pr>
+            DATOS CURIOSOS:
+ 
+        </pr>
+        <pr>
+            - El sitio cuenta con 447 líneas de código de programación para hacerlo posible
+        </pr>
+        <pr>
+            - Mi amor por ti siempre se ha conservado, ha cambiado de la única forma en que se hace más grande
+        </pr>
+        <pr>
+            - En curso también me hacías falta:( fue predict insano
+        </pr>
+    </section>
+
+
+  <!-- SECCION FLORES -->
+  <style>
+    /* estilos.css */
+.boton-elegante {
+  background-color: #19e25c;
+  color: rgb(15, 15, 15);
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+  </style>
+
+ <!-- Botón elegante -->
+ <button class="boton-elegante" onclick="abrirNuevaPestana()">Da click aquí<3</button>
+
+ <!-- Tu contenido principal aquí -->
+
+ <script>
+   function abrirNuevaPestana() {
+     window.open('./files/index.html', '_blank');
+   }
+ </script>
+</body>
+</html>
+
+     <!-- Nueva sección -->
+
+</html>
+
+
+        <!-- SECCION FOOTER -->
+    <footer>
+        <p>Todos los derechos reservados - 2024</p>
+
+
+    </footer>
+
+    <script src="scrip.js"></script>
+</body>
+
+</html>

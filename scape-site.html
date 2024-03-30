@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mainResponsive.css">
+    <title>¿Nuestro sitio seguro?</title>
+    <style>
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;  /* Permitir el desplazamiento vertical */
+}
+
+.video-container {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 50px rgba(247, 11, 168, 0.5);
+}
+
+.container header {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+        .container header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: 180px;
+            display: block; /* Esto asegura que la imagen no tenga espacios en blanco alrededor */
+            margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        }
+
+        .apology-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video autoplay muted loop id="video-background">
+            <source src="./stars.mp4" type="video/mp4">
+        </video>
+
+        
+
+        <div class="container">
+            <header>
+                <br></br>
+                <h1>Back to time</h1>
+            </header>
+       
+            <main>
+                <div class="image-container">
+                    <img src="./tkhnd.jpeg" alt="Imagen representativa">
+                </div>
+
+                <section class="apology-section">
+                    <h2>Mi linda Mady,</h2>
+                    <p>En ocasiones peleamos, o en otras ocasiones nos sentimos un poco distanciados, es por eso que hice este subdominio del sitio principal que tenemos, </p>
+                    <p>Sí, peleamos un poco, pero en realidad, ¿quién no lo supera? Si miramos el núcleo de varias relaciones, dicho núcleo es la confianza y por eso Intento hacer las cosas bien porque odio cuando peleamos, Te necesito en mi vida, sin ti realmente no puedo estar bien y lo he comprobado muchas veces, solo necesito algo real, ese es el trato. No siempre tengo palabras para expresar todo pero espero que arreglemos siempre las cosas y que podamos seguir adelante. Aprecio mucho tu comprensión y tu bondad, el tiempo que pasamos, todo...</p>
+                    <p>Aprovecho para decirte que hagas lo que hagas hazlo con el corazón y persigas tus sueños hasta que se hagan reaidad, creéte quién eres, confía mucho en ti siempre porque vas a lograr tus sueños siempre y de lo malo algún día te reíras!</p>
+                    <p>S.G.</p>                 
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2024. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mainResponsive.css">
+    <link rel="icon" href="https://scontent.fmex10-2.fna.fbcdn.net/v/t39.30808-1/424631807_1037727457315708_957906157138440872_n.jpg?stp=dst-jpg_p100x100&_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH3lmtmVPYqoyPkD3wP6fcorlPyUzrzTpyuU_JTOvNOnOqqoSg-zdvEZwUy8CnFLyhLprbkUDGXqRRxwhFpTCpG&_nc_ohc=uQKQKP-6npIAX8Q7VC0&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fmex10-2.fna&oh=00_AfA0AUDz-pbRwY-f79x5od-j6FOqBjtOKS8c0ScWp71FHw&oe=661108B2">
+    <title>Sitio para Mi Novia<3</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #4b4a4a;
+            color: #faf9f9;
+        }
+
+    /* Estilos para el video de fondo */
+    #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; /* Coloca el video detrás de otros elementos */
+            background-size: cover;
+            transition: 1s opacity;
+            opacity: 0.7; /* Ajusta la opacidad del video según sea necesario */
+        }
+
+
+        header {
+            background-color: #fa9dcc;
+            color: #181616;
+            text-align: center;
+            padding: 1.5em 0;
+            font-size: 2em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            margin-bottom: 60px; /* Añadido margen inferior para dar espacio al footer */
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+/* Estilos para el grid de fotos */
+#photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#photo-grid img {
+    width: 100%;
+    height: 500px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Ajusta el tamaño de la imagen manteniendo su proporción */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative; /* Añadido para posicionar el pie de foto */
+}
+
+/* Estilos para el pie de foto */
+#photo-grid img::after {
+    content: attr(alt); /* Utiliza el atributo "alt" de la imagen como contenido del pie de foto */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el pie de foto */
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.8em;
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.3s ease;
+}
+
+#photo-grid img:hover::after {
+    opacity: 1; /* Muestra el pie de foto al pasar el cursor sobre la imagen */
+}
+
+
+        #message-box {
+            background-color: #0f0f0f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 70%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #songs button {
+            background-color: #fa9dcc;
+            color: #181616;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #songs button:hover {
+            background-color: #f48fb1;
+        }
+
+        /* Estilos para centrar los títulos de las secciones */
+        section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Ajustes para centrar el botón "Ver Canciones" */
+        #songs {
+            text-align: center;
+            margin-top: 10px; /* Reduje un poco el margen superior para subir el botón */
+            margin-bottom: 30px; /* Añadido un margen inferior para dar espacio */
+        }
+
+        #songs button {
+            display: inline-block; /* Para que el botón se centre correctamente */
+        }
+
+        /* Ajustes para centrar el texto y el contenido del contenedor de "Palabras Para Ti" */
+        #messages {
+            text-align: center;
+            margin-bottom: 30px; /* Añadido un margen inferior para dar espacio */
+        }
+
+        #message-box {
+            max-width: 800px; /* Limita el ancho del contenedor de mensajes */
+            margin: 0 auto; /* Centra el contenedor horizontalmente */
+        }
+
+        
+    </style>
+</head>
+<body>
+
+   <!-- Video de fondo -->
+   <video id="background-video" autoplay loop muted>
+    <source src="./stars.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+</video>
+
+    <header>
+        <h1>Para Mi Amor 👉🏻👈🏻</h1>
+    </header>
+    
+    <main>
+        <section id="intro">
+            <h2>Bienvenida a Nuestro Espacio:)</h2>
+            <p>Aquí encontrarás momentos especiales, recuerdos y todo lo que siento por ti, algo indescriptible, no alcanza ninguna palabra para decirte lo que siento por ti. Ha pasado un año desde<br></br> que regresó mi felicidad pero ha sido más tiempo el que hemos compartido juntos, no quiero que sea cuestión solo de un año o unos años, si no algo real para toda mi vida contigo.</p>
+        </section>
+        
+        <section id="gallery">
+            <h2>Más momentos nuestros:</h2>
+            <div id="photo-grid">
+                <!-- Las fotos se añadirán dinámicamente con JavaScript -->
+                <img src="./im1.jpeg" alt="Foto 1" data-order="1"/><img src="./im2.jpeg" alt="Foto 2" data-order="2"/><img src="./im3.jpeg" alt="Foto 3" data-order="3"/>     
+            </div>
+        </section>
+        
+        <section id="messages">
+            <h2>Words to you</h2>
+            <div id="message-box">
+                <!-- Los mensajes se añadirán dinámicamente con JavaScript -->
+            
+
+            </div>
+        </section>
+        
+        <section id="songs">
+            <h2>Canciones Para Ti</h2>
+            <button onclick="openModal()">Ver Canciones</button>
+        </section>
+
+        <!-- Modal para las canciones -->
+        <div id="songModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Lista de Canciones</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=pXEjCjZKyl4" target="_blank">ENOUGH - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=8IZctwFX63Y" target="_blank">GREET HER - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=FyA2h2rasz8" target="_blank">DON'T PLAY - JUICE WRLD</a></li>
+                    <br></br>
+                    <li><a href="https://youtube.com/watch?v=zrosGZQCOlU" target="_blank">DREAMIN - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=9acxJlH-UVI" target="_blank">MI BEBÉ - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=nG5kIljtTzo" target="_blank">WITHOUT YOU - KID LAROI</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=Z3FOQ17uE9M" target="_blank">WORDS TO YOU - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=pSM1_SL-6V4" target="_blank">FALLING - TREVOR DANIEL</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=71Hgv8O_TmA" target="_blank">FALLING - LIL MOSEY</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=x--vFTFZirE" target="_blank">SPOTLIGHT - TAVENCHI</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=TpRbRMmBGaw" target="_blank">SOMEBODY - LIL TECCA & A BOOGIE WIT DA HOODIE</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=Xft4e05m390" target="_blank">PÚBLICO - URBA Y ROME</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=Tjnrp4iWklM" target="_blank">PERFECT - ED SHEERAN</a></li>
+                    <br></br>
+                    <li><a href="https://www.youtube.com/watch?v=ZuY1Ewz0IHo" target="_blank">MIA - BAD BUNNY & DRAKE</a></li>
+                    <!-- Añadir más canciones según sea necesario -->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Por y Para Siempre</p>
+    </footer>
+
+    <script>
+        // Función para abrir el modal
+        function openModal() {
+            const modal = document.getElementById('songModal');
+            modal.style.display = 'block';
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            const modal = document.getElementById('songModal');
+            modal.style.display = 'none';
+        }
+    
+        function addMessage(message) {
+            const messageBox = document.getElementById('message-box');
+            const p = document.createElement('p');
+            p.textContent = message;
+            messageBox.appendChild(p);
+        }
+
+        // Añadir fotos y mensajes de ejemplo
+        window.onload = function() {
+            addMessage('Eres la luz de mi vida, te amo con todo mi corazón mi niña bonita.');
+            addMessage('Cada momento a tu lado es un regalo, gracias por ser mi compañera, jamás solataré tu linda manita, porque quiero salir adelante contigo.');
+            addMessage('Juntos construimos y estoy seguiro que seguiremos construyendo recuerdos que durarán para siempre.');
+            addMessage('Pasarán los años y tu serás la chica perfecta para mi, alguien con quién siempre soñé');
+            addMessage('Te amo como no tienes idea y no dudes que siempre estaré para ti, para lo que necesites siempre mi niña bonita<3');
+            addMessage('Eres un sueño hecho realidad, eres mi universo y por eso te cuidaré siempre y a tu lindo corazoncito 🥰');
+            addMessage('Jamás cambiará mi amor por ti y hace un año, no se como describir todo, pero en todo este tiempo hemos pasado mucho tiempo juntos que spero que siempre sea así, porque solo quiero estar contigo, y jamás te desanimes de nada, tu eres perfecta en todos los aspectos y siempre estaré para apoyarte!');
+        };
+    </script>
+    
+</body>
+</html>
